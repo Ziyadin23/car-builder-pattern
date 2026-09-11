@@ -1,75 +1,39 @@
 package kz.aitu.builder.car;
 
 import java.util.List;
-import java.util.Objects;
 
-/**
- * The immutable product created by the builders.
- * A defensive copy prevents callers from changing the feature list afterward.
- */
-public final class Car {
+/** The product created by the builders. */
+public class Car {
+    private final String type;
     private final String model;
-    private final CarType type;
-    private final Engine engine;
+    private final String engine;
+    private final int horsepower;
     private final int seats;
-    private final Transmission transmission;
+    private final String transmission;
     private final String color;
     private final List<String> features;
 
-    Car(
-            String model,
-            CarType type,
-            Engine engine,
-            int seats,
-            Transmission transmission,
-            String color,
-            List<String> features
-    ) {
+    Car(String type, String model, String engine, int horsepower, int seats,
+        String transmission, String color, List<String> features) {
+        this.type = type;
         this.model = model;
-        this.type = Objects.requireNonNull(type);
-        this.engine = Objects.requireNonNull(engine);
+        this.engine = engine;
+        this.horsepower = horsepower;
         this.seats = seats;
-        this.transmission = Objects.requireNonNull(transmission);
+        this.transmission = transmission;
         this.color = color;
         this.features = List.copyOf(features);
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public CarType getType() {
-        return type;
-    }
-
-    public Engine getEngine() {
-        return engine;
-    }
-
-    public int getSeats() {
-        return seats;
-    }
-
-    public Transmission getTransmission() {
-        return transmission;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public List<String> getFeatures() {
-        return features;
     }
 
     @Override
     public String toString() {
         return "Car{" +
-                "model='" + model + '\'' +
-                ", type=" + type +
-                ", engine=" + engine.name() + " (" + engine.horsepower() + " hp, " + engine.fuelType() + ")" +
+                "type='" + type + '\'' +
+                ", model='" + model + '\'' +
+                ", engine='" + engine + '\'' +
+                ", horsepower=" + horsepower +
                 ", seats=" + seats +
-                ", transmission=" + transmission +
+                ", transmission='" + transmission + '\'' +
                 ", color='" + color + '\'' +
                 ", features=" + features +
                 '}';

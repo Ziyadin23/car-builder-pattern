@@ -1,21 +1,19 @@
 package kz.aitu.builder.car;
 
-/** Builds practical passenger cars with four to seven seats. */
-public final class PassengerCarBuilder extends AbstractCarBuilder {
-    private static final int MINIMUM_PASSENGER_SEATS = 4;
-    private static final int MAXIMUM_PASSENGER_SEATS = 7;
+/** Builds normal passenger cars. */
+public class PassengerCarBuilder extends CarBuilder {
+    private static final int MIN_SEATS = 4;
+    private static final int MAX_SEATS = 7;
 
-    public PassengerCarBuilder() {
-        super(CarType.PASSENGER);
+    @Override
+    protected String getCarType() {
+        return "Passenger Car";
     }
 
     @Override
-    protected void validateSpecificState() {
-        if (seats < MINIMUM_PASSENGER_SEATS || seats > MAXIMUM_PASSENGER_SEATS) {
-            throw new IllegalStateException(
-                    "Passenger car seat count must be between "
-                            + MINIMUM_PASSENGER_SEATS + " and " + MAXIMUM_PASSENGER_SEATS
-            );
+    protected void validateSpecificRules() {
+        if (seats < MIN_SEATS || seats > MAX_SEATS) {
+            throw new IllegalStateException("A passenger car must have 4 to 7 seats");
         }
     }
 }
