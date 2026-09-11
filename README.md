@@ -187,3 +187,4 @@ All cars require a nonblank model and color, an engine, at least one seat, and a
 
 The Word report is stored in `docs/report/Builder_Pattern_Car_Report.docx`. Before submission, replace the marked student-name and group placeholders and confirm the exact Moodle deadline.
 
+For defense preparation, read [`docs/DEFENSE_GUIDE.md`](docs/DEFENSE_GUIDE.md). Use [`SUBMISSION_CHECKLIST.md`](SUBMISSION_CHECKLIST.md) for the final Moodle and in-class steps.

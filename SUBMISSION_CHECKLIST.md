@@ -1,0 +1,22 @@
+# Submission Checklist
+
+- [x] Java 17 source code compiles.
+- [x] `Car` Product is implemented.
+- [x] `CarBuilder` interface declares construction steps.
+- [x] `PassengerCarBuilder` and `SportsCarBuilder` create meaningfully different representations.
+- [x] Fluent method chaining is implemented.
+- [x] `CarDirector` provides reusable configurations.
+- [x] `Main` demonstrates the resulting products.
+- [x] Seven tests pass.
+- [x] README explains the product, build steps, run steps, and project structure.
+- [x] UML class diagram is included in editable PlantUML form and as an image.
+- [x] Word report contains the introduction, UML, seven Clean Code principles with code excerpts, conclusion, and GitHub link.
+- [x] Git history contains incremental commits.
+- [x] GitHub repository is published.
+- [ ] Replace `[Enter your full name]` in the Word report.
+- [ ] Replace `[Enter your group]` in the Word report.
+- [ ] Confirm and enter the exact Moodle submission date.
+- [ ] Read and personalize the conclusion so it accurately describes your own experience.
+- [ ] Run `./scripts/test.sh` and `./scripts/run.sh` yourself before the defense.
+- [ ] Upload the report and repository link to Moodle before Sunday at 11:59 PM at the end of Week 1.
+- [ ] Prepare to demonstrate the program in the last practice class of Week 2.
