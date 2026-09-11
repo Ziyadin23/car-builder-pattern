@@ -1,0 +1,51 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+skinparam shadowing false
+
+class Car {
+  - model: String
+  - type: CarType
+  - engine: Engine
+  - seats: int
+  - transmission: Transmission
+  - color: String
+  - features: List<String>
+}
+
+interface CarBuilder {
+  + reset(): CarBuilder
+  + setModel(model: String): CarBuilder
+  + setEngine(engine: Engine): CarBuilder
+  + setSeats(seats: int): CarBuilder
+  + setTransmission(transmission: Transmission): CarBuilder
+  + setColor(color: String): CarBuilder
+  + addFeature(feature: String): CarBuilder
+  + build(): Car
+}
+
+abstract class AbstractCarBuilder {
+  # validateSpecificState(): void
+  - validateCommonState(): void
+}
+
+class PassengerCarBuilder
+class SportsCarBuilder
+
+class CarDirector {
+  + constructFamilyCar(builder: CarBuilder): Car
+  + constructSportsCar(builder: CarBuilder): Car
+}
+
+class Main {
+  + main(args: String[]): void
+}
+
+CarBuilder <|.. AbstractCarBuilder
+AbstractCarBuilder <|-- PassengerCarBuilder
+AbstractCarBuilder <|-- SportsCarBuilder
+AbstractCarBuilder ..> Car : builds
+CarDirector --> CarBuilder : directs
+Main --> CarDirector : uses
+Main --> CarBuilder : uses
+@enduml
