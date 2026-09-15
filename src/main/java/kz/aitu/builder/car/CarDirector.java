@@ -3,6 +3,7 @@ package kz.aitu.builder.car;
 /** Contains reusable sequences for building common car configurations. */
 public class CarDirector {
 
+    /** Uses a reusable sequence for a normal five-seat family car. */
     public Car buildFamilyCar(CarBuilder builder) {
         return builder
                 .setModel("Toyota Camry")
@@ -15,6 +16,7 @@ public class CarDirector {
                 .build();
     }
 
+    /** Uses a different sequence for a powerful two-seat sports car. */
     public Car buildSportsCar(CarBuilder builder) {
         return builder
                 .setModel("Nissan GT-R")
@@ -27,4 +29,3 @@ public class CarDirector {
                 .build();
     }
 }
-

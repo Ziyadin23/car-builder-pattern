@@ -47,6 +47,15 @@ You can also run it from the terminal:
 ./scripts/run.sh
 ```
 
+## How to test
+
+The project includes four small tests for successful construction and invalid
+passenger/sports car values. Run them with:
+
+```bash
+./scripts/test.sh
+```
+
 ## Example
 
 ```java
@@ -66,4 +75,3 @@ builder.setModel("Toyota Camry")
 ## UML
 
 The UML diagram is located in `docs/uml/car-builder.png`. The PlantUML source is in `docs/uml/car-builder.puml`.
-

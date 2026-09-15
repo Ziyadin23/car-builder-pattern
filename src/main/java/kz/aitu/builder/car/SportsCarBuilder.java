@@ -12,6 +12,7 @@ public class SportsCarBuilder extends CarBuilder {
 
     @Override
     protected void validateSpecificRules() {
+        // A sports car has fewer seats and a minimum performance requirement.
         if (seats > MAX_SEATS) {
             throw new IllegalStateException("A sports car cannot have more than 2 seats");
         }
@@ -20,4 +21,3 @@ public class SportsCarBuilder extends CarBuilder {
         }
     }
 }
-

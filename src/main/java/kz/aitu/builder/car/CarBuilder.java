@@ -3,7 +3,10 @@ package kz.aitu.builder.car;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Builder base class containing the common construction steps. */
+/**
+ * Stores the values step by step and contains the operations shared by all
+ * concrete car builders.
+ */
 public abstract class CarBuilder {
     protected String model;
     protected String engine;
@@ -44,6 +47,7 @@ public abstract class CarBuilder {
         return this;
     }
 
+    /** Validates the collected values before creating the final Car object. */
     public Car build() {
         validateCommonFields();
         validateSpecificRules();
@@ -53,6 +57,7 @@ public abstract class CarBuilder {
 
     protected abstract String getCarType();
 
+    // Each concrete builder supplies rules for its own type of car.
     protected abstract void validateSpecificRules();
 
     private void validateCommonFields() {
@@ -70,4 +75,3 @@ public abstract class CarBuilder {
         }
     }
 }
-

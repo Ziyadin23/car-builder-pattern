@@ -12,9 +12,9 @@ public class PassengerCarBuilder extends CarBuilder {
 
     @Override
     protected void validateSpecificRules() {
+        // Passenger cars in this example must have a practical number of seats.
         if (seats < MIN_SEATS || seats > MAX_SEATS) {
             throw new IllegalStateException("A passenger car must have 4 to 7 seats");
         }
     }
 }
-
